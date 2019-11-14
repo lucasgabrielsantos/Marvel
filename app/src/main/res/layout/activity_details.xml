@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.DetailsActivity"
-    android:background="#00162C">
+    android:background="#00162C"
+    tools:context=".view.activity.DetailsActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp">
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
@@ -28,6 +30,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/marvel_logo" />
+
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -37,8 +40,12 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="center"
-            android:src="@drawable/marvel_logo"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+            android:src="@drawable/marvel4k"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+
+        </ImageView>
+
         <View
             android:id="@+id/filtro"
             android:layout_width="match_parent"
@@ -46,7 +53,7 @@
             android:layout_alignParentBottom="true"
             android:alpha="0.7"
             android:background="@android:color/black"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"/>
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
         <ImageView
             android:id="@+id/imageDetails"
@@ -147,9 +154,9 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:text="Pages: "
-            android:textStyle="bold"
             android:textColor="@android:color/white"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/priceDetails" />
@@ -169,5 +176,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/priceDetails"
             app:layout_constraintVertical_bias="0.0" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

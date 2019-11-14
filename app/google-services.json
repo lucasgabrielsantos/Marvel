@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "575792716886",
+    "firebase_url": "https://projetomarvel-6b3e1.firebaseio.com",
+    "project_id": "projetomarvel-6b3e1",
+    "storage_bucket": "projetomarvel-6b3e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575792716886:android:8273b052e9d305fce0eff7",
+        "android_client_info": {
+          "package_name": "br.com.digitalhouse.projetomarvel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575792716886-en44tv2ceokfi0mmtrur58nv1t09gage.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.digitalhouse.projetomarvel",
+            "certificate_hash": "5d2535ae606c06b5b7f055ef7ce11195d68a5753"
+          }
+        },
+        {
+          "client_id": "575792716886-qijj3gp57lu99pmuej1avl6bbrpt1e2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQoxJDrf0JMh9GzzrVdvsGj7b5Lu3EkaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575792716886-qijj3gp57lu99pmuej1avl6bbrpt1e2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

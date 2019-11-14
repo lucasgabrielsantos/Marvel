@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activity.DetailsImageActivity"></activity>
+        <activity android:name=".view.activity.LoginActivity"></activity>
+        <activity android:name=".view.activity.DetailsImageActivity" />
         <activity android:name=".view.activity.DetailsActivity" />
         <activity android:name=".view.activity.MainActivity" />
         <activity android:name=".view.activity.SplashActivity">
