@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="8dp"
+    android:background="#00162C">
+
+    <ImageView
+        android:id="@+id/marvellogo"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:padding="5dp"
+        android:backgroundTint="@android:color/white"
+        android:src="@drawable/marvel_logo"
+        android:scaleType="centerInside"/>
+
+    <TextView
+        android:id="@+id/idComics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:layout_marginTop="8dp"
+        android:text="@string/idComics"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
+
