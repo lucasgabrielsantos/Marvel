@@ -7,12 +7,14 @@
     android:background="@android:color/white"
     tools:context=".view.activity.MainActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:backgroundTint="@color/redcolor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -25,62 +27,75 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/marvel_logo" />
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imagemlogogoogle"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/marvel4k" />
-
-            <TextView
-                android:id="@+id/logingoogle"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="name user"
-                android:textColor="@android:color/white"
-                android:textSize="15dp" />
-
-            <Button
-                android:id="@+id/buttonSair"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:backgroundTint="@android:color/black"
-                android:text="Desconect"
-                android:textColor="@android:color/white"
-                android:textSize="9dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/imagem2Details"
-                app:layout_constraintEnd_toEndOf="@+id/imagem2Details"
-                app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemlogogoogle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/marvel4k"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+        app:layout_constraintEnd_toStartOf="@+id/logingoogle"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/logingoogle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="casual"
+        android:text="Olá usuário"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonSair"
+        android:layout_width="117dp"
+        android:layout_height="39dp"
+        android:background="@drawable/login_background_buttondesconect"
+        android:fontFamily="casual"
+        android:text="Desconect"
+        android:textColor="@android:color/white"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSair"
+        app:layout_constraintVertical_bias="0.031" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/scrollViewStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/progressBar"
+            style="?android:attr/scrollViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

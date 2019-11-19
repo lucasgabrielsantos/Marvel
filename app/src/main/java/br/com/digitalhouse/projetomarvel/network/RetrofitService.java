@@ -61,20 +61,6 @@ public class RetrofitService {
         return getRetrofit().create(MarvelAPI.class);
     }
 
-    public void converter() {
-
-        try {
-            MessageDigest digest = MessageDigest.getInstance("Criptografia");
-            digest.update(getHash().getBytes());
-            digest.digest();
-
-        } catch (
-                NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     public  static String getTimeStamp() {
         Long ts = Calendar.getInstance().getTimeInMillis() / 1000;
 

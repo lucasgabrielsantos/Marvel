@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00162C"
+    android:background="@drawable/background_details"
     tools:context=".view.activity.DetailsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +27,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/marvel_logo" />
 
@@ -38,18 +38,18 @@
         <ImageView
             android:id="@+id/imagem2Details"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
             android:scaleType="center"
             android:src="@drawable/marvel4k"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-
 
         </ImageView>
 
         <View
             android:id="@+id/filtro"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:alpha="0.7"
             android:background="@android:color/black"
@@ -61,8 +61,8 @@
             android:layout_height="200dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="80dp"
-            android:scaleType="center"
-            android:src="@drawable/marvel_logo"
+            android:scaleType="centerInside"
+            android:src="@drawable/marvel4k"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imagem2Details" />
 
@@ -72,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Title: "
             android:textColor="@android:color/white"
             android:textSize="24sp"
@@ -86,6 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Description: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
@@ -99,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Published: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
@@ -110,13 +113,13 @@
             android:id="@+id/publishedetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="116dp"
-            android:layout_marginLeft="116dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginLeft="104dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Published: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descDetails" />
 
@@ -126,6 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Price: $ "
             android:textColor="@android:color/white"
             android:textSize="16sp"
@@ -140,10 +144,10 @@
             android:layout_marginStart="84dp"
             android:layout_marginLeft="84dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Price: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/publishedetails" />
 
@@ -153,6 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Pages: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
@@ -165,13 +170,13 @@
             android:id="@+id/pagesDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginLeft="84dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginLeft="72dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="casual"
             android:text="Pages: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/priceDetails"

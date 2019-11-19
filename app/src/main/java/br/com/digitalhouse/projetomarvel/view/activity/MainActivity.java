@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity implements OnClickDetails {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
         viewModel.getComics();
-
         viewModel.getListaComics().observe(this, resultaLista -> {
+
             adapter.atualizalista(resultaLista);
         });
 

@@ -9,11 +9,20 @@
     </style>
 
     <style name="TextLabelLogin" parent="Theme.AppCompat">
-    <!-- Hint color and label color in FALSE state -->
-    <item name="android:textColorHint">@android:color/black</item>
-    <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
-    <item name="colorControlActivated">@color/redcolor</item>
-</style>
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@android:color/black</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlActivated">@color/redcolor</item>
+    </style>
+
+
+    <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/redcolor</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
 
 
 </resources>
