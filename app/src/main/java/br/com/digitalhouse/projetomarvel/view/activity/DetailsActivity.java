@@ -3,7 +3,6 @@ package br.com.digitalhouse.projetomarvel.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,15 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
-import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 import br.com.digitalhouse.projetomarvel.R;
-import br.com.digitalhouse.projetomarvel.pojo.Price;
 import br.com.digitalhouse.projetomarvel.pojo.Result;
 import br.com.digitalhouse.projetomarvel.view.Interface.OnClickImageDetails;
 
@@ -34,7 +29,6 @@ public class DetailsActivity extends AppCompatActivity implements OnClickImageDe
     public static final String DETAILSIMAGE_KEY = "imagedetails";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,49 +40,53 @@ public class DetailsActivity extends AppCompatActivity implements OnClickImageDe
 
             Result result = getIntent().getExtras().getParcelable(RESULT_KEY);
 
-            Picasso.get().load(result.getThumbnail().getPath() + ".jpg").into(imgDetails);
-            Picasso.get().load(result.getThumbnail().getPath() + ".jpg").into(img2Details);
+            carregaImagens(result);
 
-            titleview.setText(result.getTitle());
-            descview.setText(result.getDescription());
+            SetAsViews(result);
 
-            try {
+            formatDateSetText(result);
 
-                //Atribui objeto de acordo com a localização determinada
-                Locale local = new Locale("pt", "BR");
-                //Determina a formatação inicial da data ou seja pega o formato que vem a sua data
-                // do o objeto e formata de acordo com o padrão estabelecido no objeto
-                DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
-                //Determina o formato de saida da data ou seja o resultado final da data já formatada
-                DateFormat outputFormat = new SimpleDateFormat("MMMM ',' dd ',' yyyy", local);
-                //Atribui a uma variavel o valor que está chegando da data
-                String inputText = result.getDates().get(0).getDate();
-                //Formata o valor atribuido a variavel de acordo com o padrão estabelecido no objeto
-                // de inputFormat transformando-o para um tipo Date do java
-                Date date = inputFormat.parse(inputText);
-                //Formata para o padrão de saida estabelecido inicialmente no objeto outputFormat
-                String outputText = outputFormat.format(date);
-                //Seta no textView a data formatada de acordo com o padrão estabelecido
-                publishedview.setText(outputText);
-
-            }catch (Exception ex){
-
-                Log.i("Exception", "------------> "+ex.getMessage());
-            }
-
-
-            priceView.setText(result.getPrices().get(0).getPrice());
-            pagesview.setText(result.getPageCount());
-
-
-            imgDetails.setOnClickListener(v -> {
-                Intent intent = new Intent(DetailsActivity.this, DetailsImageActivity.class);
-                intent.putExtra(DETAILSIMAGE_KEY, result);
-                startActivity(intent);
-
-            });
-
+            cliqueImagem(result);
         }
+    }
+
+    private void SetAsViews(Result result) {
+        titleview.setText(result.getTitle());
+        descview.setText(result.getDescription());
+        priceView.setText(result.getPrices().get(0).getPrice());
+        pagesview.setText(result.getPageCount());
+    }
+
+    private void carregaImagens(Result result) {
+        Picasso.get().load(result.getThumbnail().getPath() + ".jpg").into(imgDetails);
+        Picasso.get().load(result.getThumbnail().getPath() + ".jpg").into(img2Details);
+
+    }
+
+    private void formatDateSetText(Result result) {
+        try {
+            Locale local = new Locale("pt", "BR");
+            DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
+            DateFormat outputFormat = new SimpleDateFormat("MMMM ',' dd ',' yyyy", local);
+            String inputText = result.getDates().get(0).getDate();
+            Date date = inputFormat.parse(inputText);
+            String outputText = outputFormat.format(date);
+            publishedview.setText(outputText);
+
+        } catch (Exception ex) {
+
+            Log.i("Exception", "------------> " + ex.getMessage());
+        }
+    }
+
+    private void cliqueImagem(Result result) {
+
+        imgDetails.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailsActivity.this, DetailsImageActivity.class);
+            intent.putExtra(DETAILSIMAGE_KEY, result);
+            startActivity(intent);
+
+        });
     }
 
 
