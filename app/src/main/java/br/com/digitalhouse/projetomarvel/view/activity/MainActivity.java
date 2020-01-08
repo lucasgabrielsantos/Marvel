@@ -59,13 +59,7 @@ public class MainActivity extends AppCompatActivity implements OnClickDetails {
         googleSignInClient = GoogleSignIn.getClient(this, gso);
         pegaOsDados();
 
-        btnLogout.setOnClickListener(v ->
-                googleSignInClient.signOut().addOnCompleteListener(task -> {
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    finish();
-                }));
+        btnLogout();
 
 
         recyclerView.setAdapter(adapter);
@@ -85,6 +79,16 @@ public class MainActivity extends AppCompatActivity implements OnClickDetails {
             }
         });
 
+    }
+
+    private void btnLogout() {
+        btnLogout.setOnClickListener(v ->
+                googleSignInClient.signOut().addOnCompleteListener(task -> {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
+                }));
     }
 
     public void initViews() {
