@@ -82,7 +82,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageDetails" />
 
         <TextView
-            android:id="@+id/descDetails"
+            android:id="@+id/descdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -107,7 +107,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descDetails" />
+            app:layout_constraintTop_toBottomOf="@+id/descdetails" />
 
         <TextView
             android:id="@+id/publishedetails"
@@ -121,7 +121,7 @@
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descDetails" />
+            app:layout_constraintTop_toBottomOf="@+id/descdetails" />
 
         <TextView
             android:id="@+id/priceDetailsPROT"
