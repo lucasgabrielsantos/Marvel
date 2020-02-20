@@ -73,6 +73,10 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    /*############################ Paginação ##########################################*/
+    implementation "androidx.paging:paging-runtime:2.1.0"
+    implementation "androidx.paging:paging-rxjava2:2.1.0"
 }
 repositories {
     mavenCentral()
