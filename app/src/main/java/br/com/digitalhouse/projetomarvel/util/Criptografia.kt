@@ -2,7 +2,6 @@ package br.com.digitalhouse.projetomarvel.util
 
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import kotlin.experimental.and
 
 class Criptografia {
     companion object {

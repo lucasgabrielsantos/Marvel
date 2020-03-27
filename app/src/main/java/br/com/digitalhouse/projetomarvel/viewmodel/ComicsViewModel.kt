@@ -18,25 +18,28 @@ class ComicsViewModel(application: Application) : AndroidViewModel(application) 
     private val loading = MutableLiveData<Boolean>()
     private val disposable = CompositeDisposable()
     private val repository = ComicsRepository()
-    val listaComics: LiveData<List<Result>> get() = listaresult
+    var listaComics: LiveData<List<Result>> = listaresult
 
     fun loading(): MutableLiveData<Boolean> {
         return loading
     }
 
-    val comics: Unit
-        get() {
-            disposable.add(
-                    repository.comicsResponse()
-                    !!.subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .doOnSubscribe { loading.setValue(true) }
-                            .doOnTerminate { loading.setValue(false) }
-                            .flatMap { comicsResponse: ComicsResponse -> Observable.just(comicsResponse.data.results) }
-                            .subscribe({ resultlist: List<Result> -> listaresult.setValue(resultlist) }
-                            ) { throwable: Throwable -> Log.i("LOG", "erro" + throwable.message) }
-            )
-        }
+    fun getComicsViewModel() {
+        disposable.add(
+                repository.comicsResponse()
+                !!.subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .doOnSubscribe { loading.setValue(true) }
+                        .doOnTerminate { loading.setValue(false) }
+                        .flatMap { comicsResponse: ComicsResponse ->
+                            Observable.just(comicsResponse.data.results)
+                        }
+                        .subscribe(listaresult::setValue
+                        ) { throwable: Throwable ->
+                            Log.i("LOG", "erro" + throwable.message)
+                        }
+        )
+    }
 
     override fun onCleared() {
         super.onCleared()

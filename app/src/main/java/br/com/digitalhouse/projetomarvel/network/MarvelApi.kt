@@ -13,6 +13,8 @@ interface MarvelAPI {
             @Query("noVariants") noVariants: Boolean,
             @Query("ts") ts: String?,
             @Query("hash") hash: String?,
+            @Query("offset") offset: String?,
             @Query("apikey") apikey: String?): Observable<ComicsResponse?>?
+
 }
 

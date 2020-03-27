@@ -9,6 +9,6 @@ import io.reactivex.Observable
 
 class ComicsRepository {
     fun comicsResponse(): Observable<ComicsResponse?>? {
-        return getApiService().ComicsResponse("magazine", "comic", true, getTimeStamp(), getHash(), PUBLIC_KEY)
+        return getApiService().ComicsResponse("magazine", "comic", true, getTimeStamp(), getHash(), "offset", PUBLIC_KEY)
     }
 }

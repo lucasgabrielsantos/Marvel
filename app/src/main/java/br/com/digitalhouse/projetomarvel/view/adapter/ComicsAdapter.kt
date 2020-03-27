@@ -31,8 +31,11 @@ class ComicsAdapter(private var listresult: List<Result>, private val listener: 
     }
 
     fun atualizalista(resultList: List<Result>) {
+
         listresult = resultList
+
         notifyDataSetChanged()
+
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
