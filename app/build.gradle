@@ -77,7 +77,9 @@ dependencies {
     /*############################ Paginação ##########################################*/
     implementation "androidx.paging:paging-runtime:2.1.0"
     implementation "androidx.paging:paging-rxjava2:2.1.0"
-}
-repositories {
-    mavenCentral()
+
+    /*############################ Firebase translate ##########################################*/
+//
+//    implementation 'com.google.firebase:firebase-ml-natural-language:22.0.0'
+//    implementation 'com.google.firebase:firebase-ml-natural-language-translate-model:20.0.7'
 }

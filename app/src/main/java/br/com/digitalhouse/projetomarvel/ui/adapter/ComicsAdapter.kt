@@ -1,4 +1,4 @@
-package br.com.digitalhouse.projetomarvel.view.adapter
+package br.com.digitalhouse.projetomarvel.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.digitalhouse.projetomarvel.R
 import br.com.digitalhouse.projetomarvel.pojo.Result
-import br.com.digitalhouse.projetomarvel.view.Interface.OnClickDetails
+import br.com.digitalhouse.projetomarvel.Interfaces.OnClickDetails
 import com.squareup.picasso.Picasso
 
 
@@ -35,17 +35,24 @@ class ComicsAdapter(private var listresult: List<Result>, private val listener: 
         listresult = resultList
 
         notifyDataSetChanged()
-
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val imageView: ImageView = itemView.findViewById(R.id.marvellogo)
-        private val textViewTitle: TextView = itemView.findViewById(R.id.idComics)
+        private val imageView: ImageView
+        private val textViewName: TextView
+
+        init {
+            itemView.apply {
+                imageView = findViewById(R.id.imagelogo)
+                textViewName = findViewById(R.id.textName)
+            }
+
+        }
+
         fun onBind(result: Result) {
             Picasso.get().load(result.thumbnail.path + ".jpg").into(imageView)
-            textViewTitle.text = result.title
+            textViewName.text = result.title
         }
 
     }
-
 }

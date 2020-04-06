@@ -14,7 +14,7 @@
     android:backgroundTint="#00162C">
 
     <ImageView
-        android:id="@+id/marvellogo"
+        android:id="@+id/imagelogo"
         android:layout_width="72dp"
         android:layout_height="107dp"
         android:layout_gravity="center_horizontal"
@@ -24,7 +24,7 @@
         android:src="@drawable/splash" />
 
     <TextView
-        android:id="@+id/idComics"
+        android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"

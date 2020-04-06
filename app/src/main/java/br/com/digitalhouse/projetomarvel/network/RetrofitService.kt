@@ -1,26 +1,27 @@
 package br.com.digitalhouse.projetomarvel.network
 
 import br.com.digitalhouse.projetomarvel.BuildConfig
-import br.com.digitalhouse.projetomarvel.util.Criptografia
-import br.com.digitalhouse.projetomarvel.viewmodel.ComicsViewModel
+import br.com.digitalhouse.projetomarvel.constants.constantsAPI.BASE_URL
+import br.com.digitalhouse.projetomarvel.constants.constantsAPI.PRIVATE_KEY
+import br.com.digitalhouse.projetomarvel.constants.constantsAPI.PUBLIC_KEY
+import br.com.digitalhouse.projetomarvel.extensions.Criptografia
+import br.com.digitalhouse.projetomarvel.extensions.getTimeStamp
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 class RetrofitService {
-    companion object{
-        const val BASE_URL = "https://gateway.marvel.com:443/v1/public/"
+    companion object {
 
 
         // Instancia que criaremos do retrofit
         private var retrofit: Retrofit? = null
 
-         fun getRetrofit(): Retrofit {
+        fun getRetrofit(): Retrofit {
             if (retrofit == null) { // configurações da conexão
                 val httpClient = OkHttpClient.Builder()
                 httpClient.readTimeout(30, TimeUnit.SECONDS)
@@ -49,13 +50,8 @@ class RetrofitService {
             return getRetrofit().create(MarvelAPI::class.java)
         }
 
-        fun getTimeStamp(): String {
-            val ts = Calendar.getInstance().timeInMillis / 1000
-            return ts.toString()
-        }
-
         fun getHash(): String? {
-            return Criptografia.md5(getTimeStamp() + ComicsViewModel.PRIVATE_KEY + ComicsViewModel.PUBLIC_KEY)
+            return Criptografia.md5(getTimeStamp() + PRIVATE_KEY + PUBLIC_KEY)
         }
     }
 }

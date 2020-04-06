@@ -13,11 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activity.LoginActivity"></activity>
-        <activity android:name=".view.activity.DetailsImageActivity" />
-        <activity android:name=".view.activity.DetailsActivity" />
-        <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.SplashActivity">
+        <activity android:name=".ui.activity.LoginActivity"></activity>
+        <activity android:name=".ui.activity.DetailsImageActivity" />
+        <activity android:name=".ui.activity.DetailsActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package br.com.digitalhouse.projetomarvel.view.activity
+package br.com.digitalhouse.projetomarvel.ui.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.digitalhouse.projetomarvel.R
+import br.com.digitalhouse.projetomarvel.constants.constantsAPI.GOOGLE_ACCOUNT
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -54,10 +55,10 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
         val alreadyLoggedAccount = GoogleSignIn.getLastSignedInAccount(this)
         if (alreadyLoggedAccount != null) {
-            Toast.makeText(this, "Você já está logado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.Logged), Toast.LENGTH_SHORT).show()
             concluirLogin(alreadyLoggedAccount)
         } else {
-            Toast.makeText(this, "Entre em alguma coisa", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.openWithSomething), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -67,15 +68,10 @@ class LoginActivity : AppCompatActivity() {
                 .requestEmail()
                 .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-        googleSignInButton!!.setOnClickListener { view: View? ->
+        googleSignInButton!!.setOnClickListener {
             val signInIntent = googleSignInClient!!.signInIntent
             startActivityForResult(signInIntent, 101)
         }
-    }
-
-    companion object{
-        const val GOOGLE_ACCOUNT = "google_account"
-
     }
 }
 

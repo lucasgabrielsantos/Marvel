@@ -1,7 +1,8 @@
-package br.com.digitalhouse.projetomarvel.util
+package br.com.digitalhouse.projetomarvel.extensions
 
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
+import java.util.*
 
 class Criptografia {
     companion object {
@@ -37,4 +38,9 @@ class Criptografia {
         }
 
     }
+}
+    fun getTimeStamp(): String {
+        val ts = Calendar.getInstance().timeInMillis / 1000
+        return ts.toString()
+
 }

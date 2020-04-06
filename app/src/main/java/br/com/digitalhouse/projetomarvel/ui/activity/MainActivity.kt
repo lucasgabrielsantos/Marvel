@@ -1,4 +1,4 @@
-package br.com.digitalhouse.projetomarvel.view.activity
+package br.com.digitalhouse.projetomarvel.ui.activity
 
 import android.content.Context
 import android.content.Intent
@@ -9,10 +9,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.digitalhouse.projetomarvel.Interfaces.OnClickDetails
 import br.com.digitalhouse.projetomarvel.R
+import br.com.digitalhouse.projetomarvel.constants.constantsAPI.GOOGLE_ACCOUNT
+import br.com.digitalhouse.projetomarvel.constants.constantsAPI.RESULT_KEY
 import br.com.digitalhouse.projetomarvel.pojo.Result
-import br.com.digitalhouse.projetomarvel.view.Interface.OnClickDetails
-import br.com.digitalhouse.projetomarvel.view.adapter.ComicsAdapter
+import br.com.digitalhouse.projetomarvel.ui.adapter.ComicsAdapter
 import br.com.digitalhouse.projetomarvel.viewmodel.ComicsViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -27,7 +29,6 @@ class MainActivity : AppCompatActivity(), OnClickDetails {
     private val resultList: List<Result> = ArrayList()
     private var viewModel: ComicsViewModel? = null
     private var googleSignInClient: GoogleSignInClient? = null
-    private val context: Context = this
     private var offset: Int = 1
 
 
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), OnClickDetails {
     }
 
     private fun btnLogout() {
-        buttonSair!!.setOnClickListener { v: View? ->
+        buttonSair!!.setOnClickListener {
             googleSignInClient!!.signOut().addOnCompleteListener {
                 val intent = Intent(this@MainActivity, LoginActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity(), OnClickDetails {
     }
 
     private fun pegaOsDadosDoGoogle() {
-        val googleSignInAccount: GoogleSignInAccount? = intent.getParcelableExtra(LoginActivity.GOOGLE_ACCOUNT)
+        val googleSignInAccount: GoogleSignInAccount? = intent.getParcelableExtra(GOOGLE_ACCOUNT)
         Picasso.get().load(googleSignInAccount!!.photoUrl).into(imagemlogogoogle)
         logingoogle!!.text = googleSignInAccount.displayName
     }
@@ -128,7 +129,4 @@ class MainActivity : AppCompatActivity(), OnClickDetails {
         startActivity(intent)
     }
 
-    companion object {
-        const val RESULT_KEY = "result"
-    }
 }
