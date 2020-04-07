@@ -1,5 +1,5 @@
 
-package br.com.digitalhouse.projetomarvel.pojo;
+package br.com.digitalhouse.projetomarvel.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;

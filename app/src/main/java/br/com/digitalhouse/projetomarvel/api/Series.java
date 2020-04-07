@@ -1,10 +1,10 @@
 
-package br.com.digitalhouse.projetomarvel.pojo;
+package br.com.digitalhouse.projetomarvel.api;
 
 import com.google.gson.annotations.Expose;
 
 @SuppressWarnings("unused")
-public class CollectedIssue {
+public class Series {
 
     @Expose
     private String name;

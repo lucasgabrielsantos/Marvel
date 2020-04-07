@@ -1,20 +1,24 @@
 package br.com.digitalhouse.projetomarvel.ui.activity
 
-//import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions
-//import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage
-//import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage
-//import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import br.com.digitalhouse.projetomarvel.Interfaces.OnClickImageDetails
 import br.com.digitalhouse.projetomarvel.R
+import br.com.digitalhouse.projetomarvel.api.Result
 import br.com.digitalhouse.projetomarvel.constants.constantsAPI.DETAILSIMAGE_KEY
 import br.com.digitalhouse.projetomarvel.constants.constantsAPI.RESULT_KEY
-import br.com.digitalhouse.projetomarvel.pojo.Result
+import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions
+import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage
+import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage
+import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions
 import com.squareup.picasso.Picasso
+import getPortugueseTitle.conditions
+import getPortugueseTitle.englishPortugueseTranslator
 import kotlinx.android.synthetic.main.activity_details.*
+import org.w3c.dom.Text
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,25 +33,20 @@ class DetailsActivity : AppCompatActivity(), OnClickImageDetails {
             val result: Result? = intent.extras!!.getParcelable(RESULT_KEY)
 
             carregaImagens(result)
-
-//            getPortugueseTitle()
-
             SetAsViews(result)
-
             formatDateSetText(result)
 
-            cliqueImagem(result)
+            onClickImage(result)
         }
     }
 
 
     private fun SetAsViews(result: Result?) {
-
         titleDetails!!.text = result!!.title
-
         descdetails!!.text = result.description
         priceDetails!!.text = result.prices[0].price
         pagesDetails!!.text = result.pageCount
+        setPortugueseTitle()
     }
 
     private fun carregaImagens(result: Result?) {
@@ -69,7 +68,7 @@ class DetailsActivity : AppCompatActivity(), OnClickImageDetails {
         }
     }
 
-    private fun cliqueImagem(result: Result?) {
+    private fun onClickImage(result: Result?) {
         imageDetails!!.setOnClickListener {
             val intent = Intent(this@DetailsActivity, DetailsImageActivity::class.java)
             intent.putExtra(DETAILSIMAGE_KEY, result)
@@ -84,12 +83,16 @@ class DetailsActivity : AppCompatActivity(), OnClickImageDetails {
         intent.putExtras(bundle)
     }
 
-//    fun getPortugueseTitle() {
-//        val options = FirebaseTranslatorOptions.Builder().setSourceLanguage(FirebaseTranslateLanguage.EN).setTargetLanguage(FirebaseTranslateLanguage.PT).build()
-//        val englishPortugueseTranslator = FirebaseNaturalLanguage.getInstance().getTranslator(options)
-//        val conditions = FirebaseModelDownloadConditions.Builder().requireWifi().build()
-//        englishPortugueseTranslator.downloadModelIfNeeded(conditions).addOnSuccessListener {
-//            englishPortugueseTranslator.translate(descdetails.text.toString()).addOnSuccessListener { translatedText -> descdetails.text = translatedText }.addOnFailureListener {}
-//        }
+    private fun setPortugueseTitle() {
+        englishPortugueseTranslator.downloadModelIfNeeded(conditions).addOnSuccessListener {
+            englishPortugueseTranslator.translate(descdetails.text.toString())
+                    .addOnSuccessListener { translatedText ->
+                        descdetails.text = translatedText
+                    }.addOnFailureListener {
+                       lateinit var errortranslate : String
+                        Log.i("ExceptionTranslate", "------------> $errortranslate")
+                    }
+        }
 
+    }
 }

@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.digitalhouse.projetomarvel.R
@@ -35,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
                 101 -> try {
                     val task = GoogleSignIn.getSignedInAccountFromIntent(data)
                     val conta = task.getResult(ApiException::class.java)
-                    concluirLogin(conta)
+                    SucessLogin(conta)
                 } catch (e: ApiException) {
                     Log.i("LOG", "Error: " + e.message)
                     Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()
@@ -44,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun concluirLogin(conta: GoogleSignInAccount?) {
+    private fun SucessLogin(conta: GoogleSignInAccount?) {
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(GOOGLE_ACCOUNT, conta)
         startActivity(intent)
@@ -56,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
         val alreadyLoggedAccount = GoogleSignIn.getLastSignedInAccount(this)
         if (alreadyLoggedAccount != null) {
             Toast.makeText(this, getString(R.string.Logged), Toast.LENGTH_SHORT).show()
-            concluirLogin(alreadyLoggedAccount)
+            SucessLogin(alreadyLoggedAccount)
         } else {
             Toast.makeText(this, getString(R.string.openWithSomething), Toast.LENGTH_SHORT).show()
         }

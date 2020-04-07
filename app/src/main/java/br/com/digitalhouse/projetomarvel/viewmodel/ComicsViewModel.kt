@@ -5,8 +5,8 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import br.com.digitalhouse.projetomarvel.pojo.ComicsResponse
-import br.com.digitalhouse.projetomarvel.pojo.Result
+import br.com.digitalhouse.projetomarvel.api.ComicsResponse
+import br.com.digitalhouse.projetomarvel.api.Result
 import br.com.digitalhouse.projetomarvel.repository.ComicsRepository
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

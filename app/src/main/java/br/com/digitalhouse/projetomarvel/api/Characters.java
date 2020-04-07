@@ -1,12 +1,12 @@
 
-package br.com.digitalhouse.projetomarvel.pojo;
+package br.com.digitalhouse.projetomarvel.api;
 
 import com.google.gson.annotations.Expose;
 
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class Stories {
+public class Characters {
 
     @Expose
     private String available;

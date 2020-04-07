@@ -1,6 +1,6 @@
 package br.com.digitalhouse.projetomarvel.network
 
-import br.com.digitalhouse.projetomarvel.pojo.ComicsResponse
+import br.com.digitalhouse.projetomarvel.api.ComicsResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

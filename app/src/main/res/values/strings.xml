@@ -12,4 +12,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="Logged">Você já está logado</string>
     <string name="openWithSomething">Entre em alguma coisa</string>
+    <string name="titulo">Titulo:</string>
+    <string name="published">Published:</string>
 </resources>

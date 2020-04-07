@@ -1,6 +1,5 @@
 package br.com.digitalhouse.projetomarvel.ui.activity
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -13,7 +12,7 @@ import br.com.digitalhouse.projetomarvel.Interfaces.OnClickDetails
 import br.com.digitalhouse.projetomarvel.R
 import br.com.digitalhouse.projetomarvel.constants.constantsAPI.GOOGLE_ACCOUNT
 import br.com.digitalhouse.projetomarvel.constants.constantsAPI.RESULT_KEY
-import br.com.digitalhouse.projetomarvel.pojo.Result
+import br.com.digitalhouse.projetomarvel.api.Result
 import br.com.digitalhouse.projetomarvel.ui.adapter.ComicsAdapter
 import br.com.digitalhouse.projetomarvel.viewmodel.ComicsViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -84,7 +83,7 @@ class MainActivity : AppCompatActivity(), OnClickDetails {
         viewModel!!.getComicsViewModel()
 
         viewModel!!.listaComics.observe(this, Observer { resultadoDaLista: List<Result>? ->
-            adapter!!.atualizalista(resultadoDaLista!!)
+            adapter!!.UpdateList(resultadoDaLista!!)
         })
 
         viewModel!!.loading().observe(this, Observer { loading: Boolean ->

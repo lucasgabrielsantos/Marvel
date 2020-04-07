@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.digitalhouse.projetomarvel.R
-import br.com.digitalhouse.projetomarvel.pojo.Result
+import br.com.digitalhouse.projetomarvel.api.Result
 import br.com.digitalhouse.projetomarvel.Interfaces.OnClickDetails
 import com.squareup.picasso.Picasso
 
@@ -30,7 +30,7 @@ class ComicsAdapter(private var listresult: List<Result>, private val listener: 
         return listresult.size
     }
 
-    fun atualizalista(resultList: List<Result>) {
+    fun UpdateList(resultList: List<Result>) {
 
         listresult = resultList
 
