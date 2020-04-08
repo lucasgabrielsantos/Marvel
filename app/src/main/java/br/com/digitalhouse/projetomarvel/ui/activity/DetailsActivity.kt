@@ -34,7 +34,7 @@ class DetailsActivity : AppCompatActivity(), OnClickImageDetails {
 
             carregaImagens(result)
             SetAsViews(result)
-            formatDateSetText(result)
+            formatDateSetText(result!!)
 
             onClickImage(result)
         }
@@ -44,7 +44,7 @@ class DetailsActivity : AppCompatActivity(), OnClickImageDetails {
     private fun SetAsViews(result: Result?) {
         titleDetails!!.text = result!!.title
         descdetails!!.text = result.description
-        priceDetails!!.text = result.prices[0].price
+        priceDetails!!.text = result.prices?.get(0)?.price
         pagesDetails!!.text = result.pageCount
         setPortugueseTitle()
     }
@@ -54,12 +54,12 @@ class DetailsActivity : AppCompatActivity(), OnClickImageDetails {
         Picasso.get().load(result.thumbnail.path + ".jpg").into(imagem2Details)
     }
 
-    private fun formatDateSetText(result: Result?) {
+    private fun formatDateSetText(result: Result) {
         try {
             val local = Locale("pt", "BR")
             val inputFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
             val outputFormat: DateFormat = SimpleDateFormat("MMMM ',' dd ',' yyyy", local)
-            val inputText = result!!.dates[0].date
+            val inputText = result.dates[0].date
             val date = inputFormat.parse(inputText)
             val outputText = outputFormat.format(date!!)
             publishedetails!!.text = outputText

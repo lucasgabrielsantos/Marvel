@@ -14,5 +14,6 @@
     <string name="openWithSomething">Entre em alguma coisa</string>
     <string name="titulo">Titulo:</string>
     <string name="published">Published:</string>
-    <string name="descriptionlogin">Projeto desenvolvido para fins didáticos, utilizando Kotlin, Archteture Components e MVVM Desenvolvido por Lucas Gabriel :)</string>
+    <string name="descriptionlogin">Projeto desenvolvido para fins didáticos, utilizando Kotlin, Archteture Components e MVVM \n por Lucas Gabriel :)</string>
+    <string name="bemvindo">Bem Vindo ao MarvelHQs</string>
 </resources>

@@ -59,7 +59,7 @@
                     android:layout_marginTop="30dp"
                     android:fontFamily="casual"
                     android:gravity="center"
-                    android:text="Bem Vindo ao MarvelHQs"
+                    android:text="@string/bemvindo"
                     android:textSize="40dp"
                     android:textStyle="bold" />
 
