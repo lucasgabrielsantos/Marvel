@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.digitalhouse.projetomarvel.R
-import br.com.digitalhouse.projetomarvel.constants.constantsAPI.GOOGLE_ACCOUNT
+import br.com.digitalhouse.projetomarvel.constants.ConstantsAPI.GOOGLE_ACCOUNT
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -61,9 +61,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
     private fun loginWithGoogle() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)

@@ -3,7 +3,7 @@ package br.com.digitalhouse.projetomarvel.ui.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.digitalhouse.projetomarvel.R
-import br.com.digitalhouse.projetomarvel.constants.constantsAPI.DETAILSIMAGE_KEY
+import br.com.digitalhouse.projetomarvel.constants.ConstantsAPI.DETAILSIMAGE_KEY
 import br.com.digitalhouse.projetomarvel.api.Result
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details_image.*

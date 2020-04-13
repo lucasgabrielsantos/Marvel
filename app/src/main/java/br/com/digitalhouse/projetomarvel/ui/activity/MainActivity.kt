@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.digitalhouse.projetomarvel.Interfaces.OnClickDetails
 import br.com.digitalhouse.projetomarvel.R
-import br.com.digitalhouse.projetomarvel.constants.constantsAPI.GOOGLE_ACCOUNT
-import br.com.digitalhouse.projetomarvel.constants.constantsAPI.RESULT_KEY
+import br.com.digitalhouse.projetomarvel.constants.ConstantsAPI.GOOGLE_ACCOUNT
+import br.com.digitalhouse.projetomarvel.constants.ConstantsAPI.RESULT_KEY
 import br.com.digitalhouse.projetomarvel.api.Result
 import br.com.digitalhouse.projetomarvel.ui.adapter.ComicsAdapter
 import br.com.digitalhouse.projetomarvel.viewmodel.ComicsViewModel

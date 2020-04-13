@@ -113,14 +113,13 @@
             android:id="@+id/publishedetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="132dp"
-            android:layout_marginLeft="104dp"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="16dp"
             android:fontFamily="casual"
             android:text="@string/published"
             android:textColor="@android:color/white"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/publishedDetailsPROT"
             app:layout_constraintTop_toBottomOf="@+id/descdetails" />
 
         <TextView
@@ -141,14 +140,12 @@
             android:id="@+id/priceDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginLeft="84dp"
             android:layout_marginTop="16dp"
             android:fontFamily="casual"
             android:text="Price: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/priceDetailsPROT"
             app:layout_constraintTop_toBottomOf="@+id/publishedetails" />
 
         <TextView
@@ -170,15 +167,13 @@
             android:id="@+id/pagesDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="92dp"
-            android:layout_marginLeft="72dp"
             android:layout_marginTop="16dp"
             android:fontFamily="casual"
             android:text="Pages: "
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pagesDetailsPROT"
             app:layout_constraintTop_toBottomOf="@+id/priceDetails"
             app:layout_constraintVertical_bias="0.0" />
 
