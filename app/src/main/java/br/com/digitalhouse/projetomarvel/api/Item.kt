@@ -6,13 +6,4 @@ class Item {
     @Expose
     var name: String? = null
 
-    @Expose
-    var resourceURI: String? = null
-
-    @Expose
-    var role: String? = null
-
-    @Expose
-    var type: String? = null
-
 }

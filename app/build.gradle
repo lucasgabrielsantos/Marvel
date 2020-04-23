@@ -80,13 +80,15 @@ dependencies {
     implementation "androidx.paging:paging-rxjava2:2.1.0"
 
     /*############################ Firebase ##########################################*/
-
     implementation 'com.google.firebase:firebase-ml-natural-language:22.0.0'
     implementation 'com.google.firebase:firebase-ml-natural-language-translate-model:20.0.7'
     implementation "com.google.firebase:firebase-auth:19.3.0"
     implementation 'com.google.firebase:firebase-analytics:17.3.0'
 
     implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
 
 }

@@ -26,12 +26,6 @@ class RetrofitService {
                 httpClient.readTimeout(30, TimeUnit.SECONDS)
                 httpClient.connectTimeout(30, TimeUnit.SECONDS)
                 httpClient.writeTimeout(30, TimeUnit.SECONDS)
-                if (BuildConfig.DEBUG) {
-                    val httpLoggingInterceptor = HttpLoggingInterceptor()
-                    httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-                    httpClient.addInterceptor(httpLoggingInterceptor)
-                    httpClient.addNetworkInterceptor(StethoInterceptor())
-                }
                 retrofit = Retrofit.Builder()
                         .baseUrl(BASE_URL)
                         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

@@ -9,6 +9,7 @@ import br.com.digitalhouse.projetomarvel.R
 import br.com.digitalhouse.projetomarvel.api.Result
 import br.com.digitalhouse.projetomarvel.constants.ConstantsAPI.DETAILSIMAGE_KEY
 import br.com.digitalhouse.projetomarvel.constants.ConstantsAPI.RESULT_KEY
+import butterknife.ButterKnife
 import com.squareup.picasso.Picasso
 import getPortugueseTitle.conditions
 import getPortugueseTitle.englishPortugueseTranslator
@@ -31,6 +32,8 @@ class DetailsActivity : AppCompatActivity(), OnClickImageDetails {
             formatDateSetText(result!!)
 
             onClickImage(result)
+            ButterKnife.bind(this)
+
         }
     }
 

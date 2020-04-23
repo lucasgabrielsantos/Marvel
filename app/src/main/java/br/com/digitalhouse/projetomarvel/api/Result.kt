@@ -5,17 +5,6 @@ import android.os.Parcelable
 import com.google.gson.annotations.Expose
 
 class Result() : Parcelable{
-    @Expose
-    var characters: Characters? = null
-
-    @Expose
-    var collectedIssues: List<CollectedIssue>? = null
-
-    @Expose
-    var collections: List<Collection>? = null
-
-    @Expose
-    var creators: Creators? = null
 
     @Expose
     lateinit var dates: List<Date>
@@ -33,16 +22,10 @@ class Result() : Parcelable{
     var ean: String? = null
 
     @Expose
-    var events: Events? = null
-
-    @Expose
     var format: String? = null
 
     @Expose
     var id: String? = null
-
-    @Expose
-    var images: List<Image>? = null
 
     @Expose
     var isbn: String? = null
@@ -66,15 +49,6 @@ class Result() : Parcelable{
     var resourceURI: String? = null
 
     @Expose
-    var series: Series? = null
-
-    @Expose
-    var stories: Stories? = null
-
-    @Expose
-    var textObjects: List<TextObject>? = null
-
-    @Expose
     lateinit var thumbnail: Thumbnail
 
     @Expose
@@ -82,9 +56,6 @@ class Result() : Parcelable{
 
     @Expose
     var upc: String? = null
-
-    @Expose
-    var urls: List<Url>? = null
 
     @Expose
     var variantDescription: String? = null
